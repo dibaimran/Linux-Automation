@@ -1,14 +1,12 @@
 #!/bin/bash
 set -e
 
-SERVERS=(
-  "sysadmin@rkc107-02"
-  "sysadmin@rkc107-03"
-)
 
-for server in "${SERVERS[@]}"; do
-  echo "installing programs on $server..."
-  ssh -t "$server" "
+
+
+
+
+    #stop immediately if any command is failing
     set -e
 
     echo 'Updating system.....'
@@ -30,8 +28,6 @@ for server in "${SERVERS[@]}"; do
     #remove the downloaded file from the computer
     rm -f Anaconda3-latest-Linux-x86_64.sh
 
-    echo 'Done with $server!'
-  "
-done
 
-echo "All servers have the programs installed now."
+    echo 'All programs were installed successfully!'
+  
